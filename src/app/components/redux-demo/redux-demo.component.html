@@ -1,7 +1,7 @@
 <div>
     <input (click)="decrement()"
            type="button"
-           [disabled]="atStart$ | async"
+           [disabled]="(countingBy$ | async) > (count$ | async)"
            class="btn btn-primary btn-sm"
            value="-">
     <span style="padding:1em">{{ count$ | async }}</span>

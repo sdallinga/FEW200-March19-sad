@@ -15,12 +15,14 @@ export class ReduxDemoComponent implements OnInit {
     atStart$: Observable<boolean>;
     count$: Observable<number>;
     countingBy$: Observable<number>;
+    // shouldDisableDecrement$: Observable<boolean>;
     constructor(private store: Store<State>) { }
 
     ngOnInit() {
         this.count$ = this.store.select(selectCurrent);
         this.atStart$ = this.store.select(selectAtStart);
         this.countingBy$ = this.store.select(selectCountingBy);
+        //    this.shouldDisableDecrement$ = this.store.select(selectShouldDisableDecrement);
     }
 
     increment() {

@@ -23,3 +23,10 @@ export const selectCountingBy = createSelector(selectCounterBranch, c => c.by);
 
 export const selectAtStart = createSelector(selectCurrent, c => c === 0);
 
+function shouldDisable(): boolean {
+    return true;
+}
+
+
+
+// export const selectShouldDisableDecrement = createSelector(selectCurrent, c => {c.count < c.by});
