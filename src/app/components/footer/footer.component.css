@@ -1,5 +1,5 @@
 
-.rotateimg180 {
+.rotateImg180 {
     -webkit-transform:rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -7,13 +7,19 @@
     transform: rotate(180deg);
   }
 
-footer.page-footer {
-    position: absolute;
-    bottom: 0;
+footer {
     background-color: darkslategray;
     color: chartreuse;
     font-size: 0.8em;
-    padding: 10px;
-    margin: 10px;
-    
+    margin: 15px;
+    padding: 15px;
+}
+
+div#rhFooter {
+    float: right;
+    text-align: right;
+}
+
+div#midFooter {
+    text-align: center;
 }
