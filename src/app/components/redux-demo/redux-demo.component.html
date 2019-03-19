@@ -1,0 +1,16 @@
+<div>
+    <input (click)="decrement()"
+           type="button"
+           class="btn btn-primary btn-sm"
+           value="-">
+    <span style="padding:1em">{{ count$ | async }}</span>
+    <input (click)="increment()"
+           type="button"
+           class="btn btn-primary btn-sm"
+           value="+">
+    <input (click)="reset()"
+           type="button"
+           class="btn btn-primary btn-sm"
+           value="reset"
+           style="margin-left:1em">
+</div>
