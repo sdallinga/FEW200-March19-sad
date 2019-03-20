@@ -1,7 +1,7 @@
 <div>
     <input (click)="decrement()"
            type="button"
-           [disabled]="(countingBy$ | async) > (count$ | async)"
+           [disabled]="decrementDisabled$ | async"
            class="btn btn-primary btn-sm"
            value="-">
     <span style="padding:1em">{{ count$ | async }}</span>
@@ -11,7 +11,7 @@
            value="+">
     <input (click)="reset()"
            type="button"
-           [disabled]="atStart$ | async"
+           [disabled]="resetDisabled$ | async"
            class="btn btn-primary btn-sm"
            value="reset"
            style="margin-left:1em">
