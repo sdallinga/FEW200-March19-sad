@@ -4,6 +4,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CommunicationsComponent } from './features/communications/communications.component';
 import { ReduxDemoComponent } from './components/redux-demo/redux-demo.component';
 import { TodolistComponent } from './features/todolist/todolist.component';
+import { BooklistComponent } from './features/booklist/booklist.component';
 
 const routes: Routes = [
     {
@@ -21,6 +22,10 @@ const routes: Routes = [
     {
         path: 'todo-list',
         component: TodolistComponent
+    },
+    {
+        path: 'book-list',
+        component: BooklistComponent
     },
     {
         path: '**',
