@@ -7,17 +7,17 @@ import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers';
 
 @NgModule({
-  declarations: [
-      TodolistComponent, 
-      ListComponent, 
-      EntryComponent
-],
-  imports: [
-    CommonModule,
-    StoreModule.forFeature('todosFeature', reducers)
-  ],
-  exports: [
-      TodolistComponent
-  ]
+    declarations: [
+        TodolistComponent,
+        ListComponent,
+        EntryComponent
+    ],
+    imports: [
+        CommonModule,
+        StoreModule.forFeature('todosFeature', reducers)
+    ],
+    exports: [
+        TodolistComponent
+    ]
 })
 export class TodolistModule { }

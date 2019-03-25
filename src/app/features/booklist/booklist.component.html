@@ -1,3 +1,11 @@
-<p>
-  booklist works!
-</p>
+<header>
+    <h4>My Library</h4>
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col"> {{ bookCount$ | async }} Books
+            <app-list [items]="bookList$ | async"></app-list>
+        </div>
+    </div>
+</header>
