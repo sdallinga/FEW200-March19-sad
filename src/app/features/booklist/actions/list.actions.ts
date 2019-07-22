@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 import { BookEntity } from '../reducers/list';
 import { BookFormat } from '../models/index';
 
-let tempId = 0;
+let nextId = 2;
 export const BOOK_ADDED = '[booklist] Book Added';
 
 export class AddedBook implements Action {
@@ -10,12 +10,18 @@ export class AddedBook implements Action {
     payload: BookEntity;
     constructor(author: string, title: string, format: BookFormat) {
         this.payload = {
-            id: 'Temp' + tempId++,
+            id: this.getNextId().toString(),
             author,
             title,
-            format
+            format: BookFormat[format]
         };
     }
+
+    getNextId(): number {
+        nextId++;
+        return nextId;
+    }
+
 }
 
 export type All = AddedBook;

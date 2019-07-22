@@ -9,4 +9,5 @@ export interface Book {
     author: string;
     title: string;
     format: BookFormat;
+    BookFormat: BookFormat;
 }

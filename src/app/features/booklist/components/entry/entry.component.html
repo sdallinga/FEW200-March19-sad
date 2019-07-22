@@ -1,38 +1,47 @@
 <div class="form-group">
     <label>New Book</label>
     <div class="row">
-        <div class="col">
-            <label>Title</label>
-        </div>
-        <div class="col">
-
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label>Author</label>
-        </div>
-        <div class="col">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label>Format</label>
-        </div>
-        <div class="col">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <label for="inputGroupSelect01"
-                           class="input-group-text">Options</label>
-                </div>
-                <select id="inputGroupSelect01"
-                        class="custom-select">
-                    <option selected>Choose...</option>
-                    <option value="hard">Hardcover</option>
-                    <option value="paper">Paperback</option>
-                    <option value="ebook">E-Book</option>
-                </select>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label for="inputTitle"
+                       class="input-group-text">Title</label>
             </div>
+            <input id="inputTitle"
+                   class="form-control"
+                   #title />
         </div>
+    </div>
+    <div class="row">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label for="inputAuthor"
+                       class="input-group-text">Author</label>
+            </div>
+            <input id="inputAuthor"
+                   class="form-control"
+                   #author />
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label for="inputBookFormat"
+                       class="input-group-text">Format</label>
+            </div>
+            <select id="inputBookFormat"
+                    class="custom-select"
+                    #format>
+                <option selected>Choose...</option>
+                <option value="hard">Hardcover</option>
+                <option value="paper">Paperback</option>
+                <option value="ebook">E-Book</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <input type="button"
+               class="btn btn-primary"
+               (click)="add(title, author, format)"
+               value="Add Book">
     </div>
 </div>
