@@ -11,20 +11,22 @@ export class CounterEffects {
 
     @Effect()
     loadCountBy$ = this.actions$
-    .pipe(
-        ofType(appActions.APP_START),
-        map(()=> localStorage.getItem('count')),
-        filter(by => by != null),
-        map(by => parseInt(by, 10)),
-        map(by => new countActions.SetCountBy(by))
-    );
+        .pipe(
+            ofType(appActions.APP_START),
+            map(() => localStorage.getItem('count')),
+            filter(by => by != null),
+            map(by => parseInt(by, 10)),
+            map(by => new countActions.SetCountBy(by))
+        );
 
     @Effect({
         dispatch: false
     }) saveCountBy$ = this.actions$
         .pipe(
             ofType(countActions.COUNT_BY_SET),      // <-- ignore action if not this type output=Action {type:string}
-            map(a => a as countActions.SetCountBy), // <- output is SetCountby { type: string, by: number }cast action into COUNT_SET_BY action
+
+            // output is SetCountby { type: string, by: number }cast action into COUNT_SET_BY action
+            map(a => a as countActions.SetCountBy),
             map(a => a.by.toString()),                // <- output is string
             tap(a => localStorage.setItem('count', a))
         );
